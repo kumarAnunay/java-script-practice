@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            text-align: center;
+        }
+        #box2{
+            width: 300px;
+            height: 300px;
+            border: 2px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+    </div>
+    <button type="button" onclick="styleChange()">Button1</button>
+    <br />
+    <br />
+    Type BgColor Name:-<input type="text" id="color" />
+    <br />
+    Type Text:-<input type="text" id="text" />
+    <br />
+    Type Font Size:-<input type="text" id="font" />
+    <div id="box2">
+    </div>
+    <br />
+    <button type="button" onclick="inputChange()">Button2</button>
+    <script>
+        function styleChange(){
+            var box1 = document.getElementById("box1");
+            box1.style.backgroundColor = "Blue";
+            box1.style.width = "300px";
+            box1.style.height = "300px";
+            box1.style.border = "5px solid red";
+        }
+
+        function inputChange(){
+            var text = document.getElementById("text").value;
+            var color = document.getElementById("color").value;
+            var size = document.getElementById("font").value
+            var box2 =document.getElementById("box2");
+            box2.innerHTML = text;
+            box2.style.backgroundColor = color;
+            box2.style.fontSize = size;
+        }
+    </script>
+</body>
+</html>
