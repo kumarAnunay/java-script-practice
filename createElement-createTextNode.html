@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createElement-createTextNode</title>
+    <style>
+
+        #container{
+            width: 500px;
+            height: 500px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: black;
+        }
+
+        .box{
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+    <button  onclick="create()">click</button>
+
+    <script>
+        function create(){
+            var mainBox = document.getElementById("container");
+            for(var i=1; i<=10; i++){
+                var box = document.createElement("div");
+                var boxText = document.createTextNode(i);
+                box.appendChild(boxText);
+                box.classList.add("box");
+                mainBox.appendChild(box);
+            }
+        }
+    </script>
+</body>
+</html>
