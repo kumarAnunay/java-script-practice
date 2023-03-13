@@ -1,0 +1,101 @@
+<!-- HTML here -->
+<html>
+
+<head>
+    <title>Basic Calculator</title>
+
+    <style>
+        /* css code goes here */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .calculator {
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 16px;
+            height: 380px;
+            width: 400px;
+            margin: auto;
+            background-color: rgb(55, 54, 54);
+        }
+
+        input {
+            background-color: rgb(248, 155, 83);
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 100%;
+            height: 40px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="calculator">
+        <tr>
+            <td colspan="4"><input type="text" class="display-box" id="input" disabled /></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><input type="button" value="Clear" id="clr" onclick="clearScreen()" /></td>
+            <td colspan="2"><input type="button" value="Remove" id="remove" onclick="remove()" /></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="1" id="block1" onclick="display('1')" /></td>
+            <td><input type="button" value="2" id="block2" onclick="display('2')" /></td>
+            <td><input type="button" value="3" id="block3" onclick="display('3')" /></td>
+            <td><input type="button" value="+" id="plus" onclick="display('+')" /></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="4" id="block4" onclick="display('4')" /></td>
+            <td><input type="button" value="5" id="block5" onclick="display('5')" /></td>
+            <td><input type="button" value="6" id="block6" onclick="display('6')" /></td>
+            <td><input type="button" value="-" id="minus" onclick="display('-')" /></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="7" id="block7" onclick="display('7')" /></td>
+            <td><input type="button" value="8" id="block8" onclick="display('8')" /></td>
+            <td><input type="button" value="9" id="block9" onclick="display('9')" /></td>
+            <td><input type="button" value="/" id="divide" onclick="display('/')" /></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="." id="dot" onclick="display('.')" /></td>
+            <td><input type="button" value="0" id="block0" onclick="display('0')" /></td>
+            <td><input type="button" value="*" id="multiply" onclick="display('*')" /></td>
+            <td><input type="button" value="=" id="ans" onclick="calculate()" /></td>
+        </tr>
+    </table>
+
+
+    <script>
+        // javascript code goes here
+        function clearScreen() {
+            document.getElementById("input").value = "";
+        }
+
+        function remove() {
+            var data = document.getElementById("input").value;
+            var del = data.slice(0, -1);
+            document.getElementById("input").value = del;
+        }
+
+        function display(value) {
+            document.getElementById("input").value += value;
+        }
+
+        function calculate() {
+            var data = document.getElementById("input").value;
+            var ans = eval(data);
+            document.getElementById("input").value = ans;
+        }
+    </script>
+</body>
+
+</html>
