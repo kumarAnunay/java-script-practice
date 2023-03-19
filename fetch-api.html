@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+
+    <style>
+        .subContainerDesign{
+            background-color: blue;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 2px solid white;
+            border-radius: 10px;
+            height: 40px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+
+    </div>
+
+    <script>
+
+        let centres;
+
+        function fetchData() {
+            fetch("https://isro.vercel.app/api/centres")
+                .then((response) => response.json())
+                .then((data) => centres = data.centres)
+                .then(() => 
+                { 
+                    // console.log(centres);
+                    centres.map((item) => {
+                        console.log(item);
+                        addData(item);
+                    })
+                });
+
+        }
+        fetchData();
+
+        function addData(res) {
+            let mainContainer = document.getElementById("container");
+            let subContainer = document.createElement("div");
+
+            let city = document.createElement("div");
+            city.innerHTML = res.Place;
+
+            let state = document.createElement("div");
+            state.innerHTML = res.State;
+
+            let centre = document.createElement("div");
+            centre.innerHTML = res.name;
+
+            subContainer.appendChild(centre);
+            subContainer.appendChild(city);
+            subContainer.appendChild(state);
+            mainContainer.appendChild(subContainer);
+
+            subContainer.classList.add("subContainerDesign");
+        }
+
+    </script>
+</body>
+
+</html>
