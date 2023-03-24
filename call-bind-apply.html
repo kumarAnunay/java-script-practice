@@ -1,0 +1,37 @@
+<script>
+    let name = {
+        firstName: "Anunay",
+        lastName: "Singh",
+    };
+    
+    let printName = function (city, state){
+        console.log(`Name is:- ${this.firstName} ${this.lastName} from ${city}, ${state}`);
+    };
+
+    //Call ---> Function borrowing
+    //In call function arguments are passed individually with couma seperator
+    printName.call(name, "Deoghar", "Jharkhand");
+    console.log("----------");
+
+    const newName = {
+        firstName: "Nikhil",
+        lastName: "Singh"
+    };
+    
+    //Apply
+    //only difference between call and apply is the way of passing argument
+    //In apply arguments passed in array list
+    printName.apply(newName, ["Deoghar", "Jharkhand"]);
+
+    const neewName = {
+        firstName: "Nitish",
+        lastName: "Singh"
+    };
+    //Bind
+    //It binds the function to the object and returns the copy of the method
+    //Difference between call and apply is call directly invokes the function and bind returns the copy of method which can be invoked later
+    let bindMethod = printName.bind(neewName, "Deoghar", "Jharkhand");
+    console.log("----------");
+    bindMethod();
+
+</script>
