@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alert-prompt-confirm</title>
+</head>
+<body>
+    <div id="container1">
+
+    </div>
+
+    <script>
+        alert("Hello");
+        let name = prompt("Enter your Name");
+        let write = confirm(`Is this correct name ${name}`);
+        if(write){
+            document.getElementById("container1").innerHTML = name;
+        }
+        else{
+            document.getElementById("container1").innerHTML = "allow to write";
+        }
+        let key = "name";
+        let value = name;
+        localStorage.setItem(key, value);
+        console.log(localStorage.getItem(key));
+    </script>
+</body>
+</html>
