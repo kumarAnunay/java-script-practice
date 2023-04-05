@@ -48,3 +48,36 @@
       console.log("Messaged received :", textMessage);
       console.log("Oh no! :( I will prepare some maggie then");
     });
+
+
+    /* ---------------------- Function returning a Promise ---------------------- */
+
+// const getAPromise = () =>
+//   new Promise((resolve) => {
+//     resolve("Hello");
+//   });
+
+// getAPromise().then((data) => console.log(data));
+
+/* ---------- Shortcut for creating Fulfilled and Rejected promises --------- */
+
+// const promise = new Promise((resolve) => {
+//   resolve("Hello");
+// });
+
+// const promise = Promise.resolve("Hello");
+// promise.then((data) => console.log(data));
+
+// const promise = new Promise((_, reject) => {
+//   reject("Failed!");
+// });
+
+// const promise = Promise.reject("Failed!");
+
+/* --------------------- Stores promises inside an array -------------------- */
+
+// const promiseOne = Promise.resolve("🚀");
+// const promiseTwo = Promise.reject("🔥");
+// const promiseThree = Promise.resolve("✅");
+// const arrayOfPromises = [promiseOne, promiseTwo, promiseThree];
+
