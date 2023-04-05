@@ -1,0 +1,25 @@
+<script>
+  // create a promise
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      let foodAvailable = true;
+      if (foodAvailable) {
+        resolve("Food recieved");
+      } else {
+        reject("Food not recieved");
+      }
+    }, 2000);
+  });
+
+  promise
+    .then((msg) => {
+      console.log(msg);
+      return "Coming"
+    })
+    .then((msg) => {
+        console.log(msg);
+    })
+    .catch((msg) => {
+      console.log(msg);
+    });
+</script>
