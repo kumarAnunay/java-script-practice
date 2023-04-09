@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div style="width: 500px; height: 200px; border: 1px solid black">
+        <input id="name" type="text" placeholder="enter your name" />
+        <input id="number" type="number" placeholder="enter your number" />
+        <button onclick="addInTodoList()">Add in Todo</button>
+      </div>
+      <div id="main"></div>
+    </div>
+  </body>
+  <script>
+    // let arr = [];
+    const addInTodoList = () => {
+      console.log("tadas");
+      let obj = {
+        name: document.getElementById("name").value,
+        number: document.getElementById("number").value,
+      };
+      appendInWindow(obj);
+    };
+
+    const appendInWindow = (obj) => {
+      let main = document.getElementById("main");
+      let parentContainer = document.createElement("div");
+      let nameContainer = document.createElement("div");
+      let numberContainer = document.createElement("div");
+      let deleteBtn = document.createElement("button");
+      deleteBtn.innerHTML = "delete";
+      deleteBtn.addEventListener("click", (e) => {
+        e.target.parentElement.remove();
+      });
+      nameContainer.innerHTML = obj.name;
+      numberContainer.innerHTML = obj.number;
+      parentContainer.append(nameContainer);
+      parentContainer.append(numberContainer);
+      parentContainer.append(deleteBtn);
+      main.append(parentContainer);
+    };
+  </script>
+</html>
