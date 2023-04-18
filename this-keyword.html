@@ -1,0 +1,19 @@
+<script>
+  var x = "a";
+
+  const obj = {
+    x: 1,
+    y: () => {
+      console.log(this.x);
+    },
+    z: function () {
+      console.log(this.x);
+    },
+  };
+
+  obj.y();
+  obj.z();
+
+  //Arrow function does not bind this keyword
+  //let and const variable does not bind to window object;
+</script>
