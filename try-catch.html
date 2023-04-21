@@ -1,0 +1,17 @@
+<script>
+    let x = 2;
+    try {
+        if (x < 200) {
+            throw new Error("Less");
+        }
+        else if (x == 200) {
+            console.log("equal");
+        }
+        else {
+            console.log("greater");
+        }
+
+    } catch (error) {
+        console.log(error.message);
+    }
+</script>
