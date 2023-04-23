@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination-Data-fetch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            border: 1 px solid black;
+            max-width: 500px;
+        }
+
+        button {
+            cursor: pointer;
+            margin-right: 10px;
+            padding: 10px;
+            border-radius: 15px;
+            border: none;
+            background-color: brown;
+            color: white;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div id="container">
+
+        </div>
+        <button id="previousBtn">Previous</button>
+        <button id="nextBtn">Next</button>
+    </div>
+
+
+    <script>
+
+
+        let container = document.getElementById("container");
+        let previousBtn = document.getElementById("previousBtn");
+        let nextBtn = document.getElementById("nextBtn");
+
+        previousBtn.addEventListener("click", previousPageData);
+        nextBtn.addEventListener("click", nextPageData);
+
+        let page = 1;
+        let datastorage = [];
+
+        async function dataFetch() {
+            let url = `https://api.github.com/repositories/1300192/issues?$page=${page}&per_page=10`;
+            let response = await fetch(url);
+            let array = await response.json();
+            appendData(datastorage)
+        }
+
+        function appendData(data) {
+            let
+
+        }
+
+        function previousPageData() {
+            if (page > 1) {
+                page--;
+                dataFetch();
+            }
+        };
+
+        function nextPageData() {
+            page++;
+            dataFetch();
+        };
+    </script>
+</body>
+
+</html>
