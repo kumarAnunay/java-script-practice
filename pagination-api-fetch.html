@@ -20,7 +20,7 @@
         }
 
         .container {
-            border: 1 px solid black;
+            border: 1px solid black;
             max-width: 500px;
         }
 
@@ -40,17 +40,14 @@
 <body>
 
     <div class="main">
-        <div id="container">
+        <div class="container" id="container">
 
         </div>
         <button id="previousBtn">Previous</button>
         <button id="nextBtn">Next</button>
     </div>
 
-
     <script>
-
-
         let container = document.getElementById("container");
         let previousBtn = document.getElementById("previousBtn");
         let nextBtn = document.getElementById("nextBtn");
@@ -59,18 +56,25 @@
         nextBtn.addEventListener("click", nextPageData);
 
         let page = 1;
-        let datastorage = [];
+        let dataStorage = [];
 
         async function dataFetch() {
-            let url = `https://api.github.com/repositories/1300192/issues?$page=${page}&per_page=10`;
+            let url = `https://api.github.com/repositories/1300192/issues?page=${page}&per_page=10`;
             let response = await fetch(url);
-            let array = await response.json();
-            appendData(datastorage)
+            dataStorage = await response.json();
+            console.log(dataStorage);
+            appendData(...dataStorage);
         }
 
-        function appendData(data) {
-            let
-
+        function appendData(...data) {
+            let idContainer = document.createElement("div");
+            for (let i = 0; i < data.length; i++) {
+                let dataItem = document.createElement("div");
+                dataItem.innerHTML = data[i].id;
+                idContainer.append(dataItem);
+            }
+            container.innerHTML = "";
+            container.append(idContainer);
         }
 
         function previousPageData() {
@@ -84,6 +88,8 @@
             page++;
             dataFetch();
         };
+
+        dataFetch();
     </script>
 </body>
 
