@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Key Press Example</title>
+    <style>
+        body {
+            text-align: center;
+            font-size: 36px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Press a key on your keyboard</p>
+    <p id="key">Key pressed: </p>
+    <script>
+        const keyParagraph = document.getElementById("key");
+
+        document.addEventListener("keydown", function (event) {
+            keyParagraph.innerHTML += event.key;
+        });
+
+    </script>
+</body>
+
+</html>
