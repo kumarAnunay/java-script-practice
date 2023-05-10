@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling - Propogation</title>
+    <style>
+        .div1 {
+            width: 500px;
+            height: 500px;
+            display: grid;
+            place-content: center;
+            background-color: blue;
+            text-align: center;
+        }
+
+        .div2 {
+            width: 300px;
+            height: 300px;
+            display: grid;
+            place-content: center;
+            background-color: red;
+            text-align: center;
+        }
+
+        .div3 {
+            width: 150px;
+            height: 150px;
+            background-color: green;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1" onclick="parentHandler(event)">
+        <div class="div2" onclick="childHandler(event)">
+            <div class="div3" onclick="grandchildHandler(event)">
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function parentHandler(event) {
+            // event.stopPropagation();
+            alert("parent");
+        }
+
+        function childHandler(event) {
+            alert("child");
+            // event.stopPropagation();
+        }
+
+        function grandchildHandler(event) {
+            alert("grandchild");
+            // event.stopPropagation(); It stops the default action
+        }
+    </script>
+
+</body>
+
+</html>
