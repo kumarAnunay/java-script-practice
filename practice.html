@@ -46,3 +46,54 @@
     console.log("3" + 1);
     console.log(5 === "5");
 </script> -->
+
+<!-- <script>
+    const obj1 = { name: 'Sachin' }
+
+    const obj2 = { name: 'Kohli' }
+
+    console.log({ ...obj1, ...obj2 })
+</script> -->
+
+<!-- <script>
+    const num = [1, 2, 3]
+    console.log(num.pop());
+
+    const numm = [1, 2, 3]
+    console.log(numm.push(5))
+</script> -->
+
+<!-- <script>
+    //   const arr = [12, 5, 122, 4, 9, 67];
+    //   function sortArray(arr) {
+    //     return arr.sort((a, b) => {
+    //       return b - a;
+    //     });
+    //   }
+    //   const [a, b, c, d, e, f] = sortArray(arr);
+    //   console.log(a + c + d);
+
+
+    //spread operator is Deep copying 
+    //other copying are Shallow Copying
+    // Shallow Copy: where both copies share the same memory location. Change in one reflects in the other as well.
+    // Deep Copy: where both copies do share the same memory location. Change in one DOES NOT reflect in the other.
+
+    //Deep copying are not applied to neasted objects
+    const person = {
+
+        name: "Rohit Jain",
+        profession: "Full Stack Trainer",
+        address: {
+            state: "Rajasthan",
+            city: "Udaipur",
+        },
+    };
+
+    const student = { ...person }; //DEEP COPY
+    student.address.state = "Karnataka";
+    console.log(person.address.state); //Karnataka
+
+    student.name = "Abdur Rahman";
+    console.log(person.name); //Rohit Jain
+</script> -->
