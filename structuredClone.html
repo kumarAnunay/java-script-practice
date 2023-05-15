@@ -1,0 +1,26 @@
+<script>
+    //Deep Copy
+    const obj = {
+        name: "Anunay Singh",
+        address: {
+            city: "deoghar",
+            state: "jharkhand"
+        }
+    };
+    console.log("obj:- ", obj);
+
+    const obj1 = { ...obj };
+    obj1.name = "Anunay";
+    obj1.address.city = "Pune"
+    console.log("obj1:- ", obj1);
+    console.log("obj:- ", obj);
+
+    //structured clone
+    const obj2 = structuredClone(obj);
+    obj2.name = "Anu";
+    obj2.address.city = "Delhi"
+    console.log("obj2:- ", obj2);
+    console.log("obj:- ", obj);
+
+
+</script>
