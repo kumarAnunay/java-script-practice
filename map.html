@@ -1,0 +1,15 @@
+<script>
+    const userDetails = [
+        { firstName: "Anunay", lastName: "Singh", age: 21 },
+        { firstName: "Akanksha", lastName: "Kumari", age: 28 },
+        { firstName: "Aakash", lastName: "Singh", age: 26 }
+    ];
+
+    // output ---> ["Anunay Sinh", "Akanksha Kumari", "Aakash Singh"]
+
+    const output = userDetails.map((userDetail) => {
+        return userDetail.firstName + " " + userDetail.lastName;
+    });
+
+    console.log(output);
+</script>

@@ -1,0 +1,32 @@
+<script>
+    const userDetails = [
+        { firstName: "Anunay", lastName: "Singh", age: 21 },
+        { firstName: "Sujata", lastName: "Kumari", age: 21 },
+        { firstName: "Akanksha", lastName: "Kumari", age: 28 },
+        { firstName: "Aakash", lastName: "Singh", age: 26 }
+    ];
+
+    // output - > [
+    //     { firstName: "Anunay", lastName: "Singh", age: 21 },
+    //     { firstName: "Sujata", lastName: "Kumari", age: 21 },
+    //     { firstName: "Aakash", lastName: "Singh", age: 26 }
+    // ]
+
+    const output = userDetails.filter((userDetails) => {
+        return userDetails.age < 28;
+    });
+
+    console.log(output);
+
+
+    // output - > firstName of user age equals to 21 
+    // [ "Anunay", "Sujata" ]
+
+    const result = userDetails.filter((userDetail) => {
+        return userDetail.age == 21;
+    }).map((user) => {
+        return user.firstName
+    });
+
+    console.log(result);
+</script>

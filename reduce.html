@@ -1,0 +1,69 @@
+<script>
+    const arr1 = [1, 2, 9, 4, 5, 8, 3];
+
+    const output1 = arr1.reduce((acc, curr) => {
+        acc = acc + curr;
+        return acc;
+    }, 0);
+
+    console.log(output1);
+</script>
+
+
+<script>
+    const arr2 = [1, 2, 9, 4, 5, 8, 3];
+
+    const output2 = arr2.reduce((acc, curr) => {
+        if (curr > acc) {
+            acc = curr;
+        };
+
+        return acc;
+    }, 0);
+
+    console.log(output2);
+</script>
+
+<script>
+    const userDetails = [
+        { firstName: "Anunay", lastName: "Singh", age: 21 },
+        { firstName: "Sujata", lastName: "Kumari", age: 21 },
+        { firstName: "Akanksha", lastName: "Kumari", age: 28 },
+        { firstName: "Aakash", lastName: "Singh", age: 26 }
+    ];
+
+    // output ---> [21: 2, 28: 1, 26: 1]
+
+    const newObj = userDetails.reduce((acc, curr) => {
+        if (acc[curr.age]) {
+            acc[curr.age] = ++acc[curr.age];
+        }
+        else {
+            acc[curr.age] = 1;
+        }
+
+        return acc;
+    }, {});
+
+    console.log(newObj);
+</script>
+
+<script>
+    const users = [
+        { firstName: "Anunay", lastName: "Singh", age: 21 },
+        { firstName: "Sujata", lastName: "Kumari", age: 21 },
+        { firstName: "Akanksha", lastName: "Kumari", age: 28 },
+        { firstName: "Aakash", lastName: "Singh", age: 26 }
+    ];
+
+    // output - > firstName of user age equals to 21 
+    // [ "Anunay", "Sujata" ]
+
+    const result = users.reduce((acc, curr) => {
+        if (curr.age === 21) {
+            acc.push(curr.firstName);
+        }
+        return acc;
+    }, []);
+    console.log(result);
+</script>
