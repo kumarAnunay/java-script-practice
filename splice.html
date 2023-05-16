@@ -1,0 +1,22 @@
+<script>
+    //The splice method is used to add, remove, or replace elements within an array. 
+    //It can modify the original array.
+    //It takes multiple arguments: the starting index, the number of elements to remove (optional), and the elements to add (optional).
+
+    //Removing elements from an array
+    const fruits = ["apple", "banana", "orange", "kiwi"];
+    const removedFruits = fruits.splice(1, 2);
+    console.log(fruits); // Output: ["apple", "kiwi"]
+    console.log(removedFruits); // Output: ["banana", "orange"]
+
+    //Adding elements to an array
+    const colors = ["red", "green", "blue"];
+    colors.splice(1, 0, "yellow", "purple");
+    console.log(colors); // Output: ["red", "yellow", "purple", "green", "blue"]
+
+    //Replace elements to an array
+    const cars = ["Verna", "Dzire", "Nexon", "Fortuner", "Thar"];
+    const removedCars = cars.splice(1, 2, "Audi", "Scorpio");
+    console.log(cars); // Output: ["Verna", "Audi", "Scorpio", "Fortuner", "Thar"]
+    console.log(removedCars); // Output: ["Dzire", "Nexon"]
+</script>
